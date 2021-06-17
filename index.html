@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HouseScaling</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="disable-dbl-tap-zoom">
+  <div class="wrapper" id="wrapper">
+    <div class="page-1">
+      <section class="section-1">
+        <div class="head-box">
+          <h1>HOUSE OF SCALES</h1>
+          <p class="house-des">Suppose we had a nice, small box of a house. If we multiplied the width by 10,
+            how much would the total volume increase?</p>
+          <p class="txt-for-btn">Press the button to find out.</p>
+          <button class="next-btn" onclick="nextBtn()"  tabindex="0" aria-label="next">Next</button>
+        </div>
+      </section>
+      <section class="section-wrapper">
+        <div class="section-2">
+          <div class='house-block0'>
+            <img src="./image/House_icon.png" alt="" srcset="" draggable="false">
+          </div>
+        </div>
+        <img src="./image/10W.png" alt="" srcset="" id="widthImg">
+        <img src="./image/10L.png" alt="" srcset="" id='lengthImg'>
+        <img src="./image/10H.png" alt="" srcset="" id='heightImg'>
+        <img src="./image/House_1.png" alt="" srcset="" id='complete-Home-Img'>
+      </section>
+    </div>
+    <div class="page-2 hide">
+      <section class="section-3">
+        <div class="heading-text">
+          <p>Use the dimensions of the little house (LH) and the 10:1 scale to determine the dimensions of the big house
+            (BH). Fill in the chart and then decorate the house! </p>
+        </div>
+      </section>
+      <section class="section-4">
+        <div class="house-rotation">
+          <div class="scene">
+            <div class="cube" id="cube">
+              <div class="cube__face cube__face--front"></div>
+              <div class="cube__face internal--front"></div>
+              <div class="cube__face cube__face--back"></div>
+              <div class="cube__face internal--back"></div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face internal--right"></div>
+              <div class="cube__face cube__face--left"></div>
+              <div class="cube__face internal--left"></div>
+              <div class="cube__face cube__face--bottom"></div>
+            </div>
+          </div>
+        </div>
+        <div class="page-2-house"><img src="./image/House_icon.png" alt="" srcset=""></div>
+        <div class="house-table">
+          <span>HOUSE OF SCALES</span>
+          <table>
+            <tr>
+              <th></th>
+              <th>LH</th>
+              <th>BH</th>
+            </tr>
+            <tr>
+              <td>Length (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>3.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Width (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>3.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Height (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>3.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Floor Area (in<sup>2</sup>) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>9.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Door Width (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>0.5</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Door Height (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>2.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Door Area (in<sup>2</sup>) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td><input maxlength="5"></td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Window Width (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>0.75</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Window Height (in) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td>1.0</td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>Window Area (in<sup>2</sup>) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td><input maxlength="5"></td>
+              <td><input maxlength="5"></td>
+            </tr>
+            <tr>
+              <td>House Volume (in<sup>3</sup>) <img src="./image/C1.png" alt="" srcset=""></td>
+              <td><input maxlength="5"></td>
+              <td><input maxlength="5"></td>
+            </tr>
+          </table>
+
+        </div>
+      </section>
+      <section class="section-5">
+        <div class="house-3d">
+          <div class="house-move">
+            <img src="./image/A_Btn.png" alt="" srcset="" id="top-arrow" tabindex="0" role="button" aria-label="top arrow" onmouseenter="mouseOver(event)"
+              onmouseleave="mouseOut(event)" onclick="changeSide(event)" onContextMenu="return false">
+            <img src="./image/A_Btn.png" alt="" srcset="" id="right-arrow" tabindex="0" role="button" aria-label="right arrow" onmouseenter="mouseOver(event)"
+              onmouseleave="mouseOut(event)" onclick="changeSide(event)" onContextMenu="return false">
+            <img src="./image/A_Btn.png" alt="" srcset="" id="left-arrow" tabindex="0" role="button" aria-label="left arrow" onmouseenter="mouseOver(event)"
+              onmouseleave="mouseOut(event)" onclick="changeSide(event)" onContextMenu="return false">
+            <img src="./image/A_Btn.png" alt="" srcset="" id="down-arrow" tabindex="0" role="button" aria-label="down arrow" onmouseenter="mouseOver(event)"
+              onmouseleave="mouseOut(event)" onclick="changeSide(event)" onContextMenu="return false">
+            <p>Move the House</p>
+          </div>
+
+          <div class="house-dropdown">
+            <div class="floor">
+              <select id="floor-select" onclick="changeFloor(event)" tabindex="0" aria-expanded="true" role="list" aria-haspopup="true">
+                <option id= 'floor' value="floor" selected disabled hidden tabindex="0" aria-expanded="true" role="list">Floor</option>
+                <option id="grass" value="grass" tabindex="-1" role="option">Grass</option>
+                <option id="carpet" value="carpet" tabindex="0" role="option">Carpet</option>
+                <option value="tiles" tabindex="0" role="option">Tiles</option>
+                <option value="hardWood" tabindex="0" role="option">HardWood</option>
+              </select>
+            </div>
+            <div class="wall-drop">
+              <select id="wall-select" onchange="changeWall(event)" tabindex="0">
+                <option value="" selected disabled hidden>Siding</option>
+                <option value="wood" tabindex="0">Wood</option>
+                <option value="brick" tabindex="0">Brick</option>
+                <option value="vinyl" tabindex="0">Vinyl</option>  
+                <option value="stucco" tabindex="0">Stucco</option>
+                <option value="cheese" tabindex="0">Cheese</option>
+              </select>
+            </div>
+            <div class="inner-wall">
+              <select id="inner-wall-select" onchange="changeInnerWall(event)" tabindex="0">
+                <option value="" selected disabled hidden>Inner Walls</option>
+                <option value="pink" tabindex="0">Pink</option>
+                <option value="green" tabindex="0">Green</option>
+                <option value="art" tabindex="0">Art</option>  
+                <option value="ugly" tabindex="0">Ugly</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="instructions-btn">
+          <div class="check-answer">
+            <button id="check" onclick="checkAnswer()"  tabindex="0" role="button">Check Answers</button>
+          </div>
+          <div class="ins-cal">
+            <button id="ins" onclick="clickIns()" tabindex="0" role="button">Instructions</button>
+            <button id="cal" onclick="openCal()" tabindex="0" role="button">Calculator</button>
+            <div class="dragable-cal">
+              <span id="drag">Drag </span>
+              <img src="./image/Calcu_cros.png" alt="" srcset="" onclick="closeCal()" id="close-cal" tabindex="1">
+              <div class="cal-body">
+                  <div class="cal-display">
+                      <input type="text" id="result-display" maxlength="2" disabled>
+                  </div>
+                  <div class="cal-number" >
+                      <div id="m" onclick="calculatorValue(event)">M</div>
+                      <div id="mc" onclick="calculatorValue(event)">MC</div>
+                      <div id="c" onclick="calculatorValue(event)">C</div>
+                      <div id="seven" value='7' onclick="calculatorValue(event)">7</div>
+                      <div id="eight"value='8' onclick="calculatorValue(event)">8</div>
+                      <div id="nine" value='9' onclick="calculatorValue(event)">9</div>
+                      <div id="percent" value='%' onclick="calculatorValue(event)">%</div>
+                      <div id="root" value='root' onclick="calculatorValue(event)">&#8730;</div>
+                      <div id="four" value='4' onclick="calculatorValue(event)">4</div>
+                      <div id="five" value='5' onclick="calculatorValue(event)">5</div>
+                      <div id="six" value='6' onclick="calculatorValue(event)">6</div>
+                      <div id="mul" value='x' onclick="calculatorValue(event)">x</div>
+                      <div id="div" value='/' onclick="calculatorValue(event)">/</div>
+                      <div id="one" value='1' onclick="calculatorValue(event)">1</div>
+                      <div id="two" value='2' onclick="calculatorValue(event)">2</div>
+                      <div id="three" value='3' onclick="calculatorValue(event)">3</div>
+                      <div id="plus" value='+' onclick="calculatorValue(event)">+</div>
+                      <div id="minus" value='-' onclick="calculatorValue(event)">-</div>
+                      <div id="zero" value='0' onclick="calculatorValue(event)">0</div>
+                      <div id="dot" value='.' onclick="calculatorValue(event)">.</div>
+                      <div id="pluMin" value='7' onclick="calculatorValue(event)">&#177;</div>
+                      <div id="equal" value='=' onclick="calculatorValue(event)">=</div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      <div id="overlay">
+        <div id="overlay-text">
+          <span id="close-overlay" tabindex="0" onclick="overlayClose()"></span>
+          <p>Clicking on the up arrow at the bottom left moves the house down so you can see inside it. Clicking on the
+            down arrow moves it back to its original position. The left and right arrows rotate the house in opposite
+            directions.</p>
+          <p>Remember, use the 10 to 1 scale factor and multiplication to fill in the chart. You'll need to think about
+            the formulas for area and for volume, too.</p>
+          <p>As you fill in the right answer, menus will appear at the bottom of the page. You can use them to decorate
+            the house. To see the inside of the house close up, right click on a PC or control click on a Mac, and zoom
+            in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+  <script src="./js/scaling.js"></script>
+  <script src="./js/DragDropTouch.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./js/jquery.js"></script> -->
+</body>
+
+</html>
